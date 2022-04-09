@@ -19,14 +19,11 @@ class activ2 : AppCompatActivity() {
         val binding = ActivityActiv2Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        //получаем список аргументов, присланных из первого активити
-        //и если эти аргументы не null, то обрабатываем
         val arguments = intent.extras
         var name: String = "default"
         var surname: String = "def"
         var age: Int = 20
         if(arguments!=null) {
-            //метод get позволяет получить значение по ключу
             name = arguments.get("name").toString()
             surname = arguments.get("surname").toString()
             age = arguments.get("age").toString().toInt()
@@ -47,6 +44,8 @@ class activ2 : AppCompatActivity() {
         human.animate().duration = 5000
 
         binding.textView2.startAnimation(humanAnimation)
+        binding.textView2.animate().rotation(360F)
+        binding.textView2.animate().duration = 5000
 
         var flag = false
 
